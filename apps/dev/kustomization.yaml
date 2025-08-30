@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: demo-app
+
+resources:
+  - ../base
+
+patches:
+  - path: patch-deployment.yaml
+  - path: sops-secrets.yaml
+  - path: sops-config.yaml
+
+commonLabels:
+  environment: dev
+
+images:
+  - name: nginx
+    newTag: alpine
+
+replicas:
+  - name: demo-app
+    count: 2
