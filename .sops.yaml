@@ -1,0 +1,4 @@
+creation_rules:
+  - path_regex: .*dev.*
+    pgp: '0258C3662CDA05AB59DE88EFEC4B3E036E6CE741'
+    encrypted_regex: ^(data|stringData|apiKey|password|token|secret|credential)$
