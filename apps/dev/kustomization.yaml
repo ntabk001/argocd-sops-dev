@@ -4,8 +4,18 @@ namespace: demo-app
 
 resources:
   - ../base
-  - sops-secrets.yaml
-  - sops-config.yaml
+  # XÓA - sops-secrets.yaml và - sops-config.yaml Ở ĐÂY
+
+# THÊM secretGenerator để xử lý file đã mã hóa
+secretGenerator:
+  - name: app-secrets
+    behavior: merge
+    files:
+      - sops-secrets.yaml
+  - name: app-config
+    behavior: merge
+    files:
+      - sops-config.yaml
 
 labels:
   - pairs:
