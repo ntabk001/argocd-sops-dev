@@ -4,11 +4,8 @@ namespace: demo-app
 
 resources:
   - ../base
-  - sops-secrets.yaml  # THÊM VÀO resources thay vì secretGenerator
+  - sops-secrets.yaml
   - sops-config.yaml
-
-# XÓA secretGenerator section hoàn toàn
-# XÓA patches section nếu không cần
 
 labels:
   - pairs:
