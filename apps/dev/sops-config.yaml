@@ -4,34 +4,9 @@ metadata:
     name: app-config
     namespace: demo-app
 data:
-    environment: ENC[AES256_GCM,data:/ugt,iv:obiaBWznZfGlM+sEhoVEZugG0zyLDj5LFFduAgn5sRM=,tag:cJxjJQr9/rd2T0YuNob5uA==,type:str]
-    debug: ENC[AES256_GCM,data:4WdWaA==,iv:TYnjAVpG7Wz3u4zUyTR3Yv69sVmM8OQl5Hu6WSeIIB4=,tag:nlh/hVvB8v0/3BDMV5d8uw==,type:str]
-    app-name: ENC[AES256_GCM,data:BIVD2+8XtRQuoHkb,iv:A26xgvCZqvUALbXfuhKQAM9di/6BQmiDuNzLliUXYuI=,tag:Rs05tODjjeeFRjc39Q3CIg==,type:str]
-    database-host: ENC[AES256_GCM,data:ZBYEdSJ7,iv:tUDqgfAsM6de5RnNR7TXT8F9ZaxkRBPDD2YJJg8IXDk=,tag:qk1yDBrMtcdUUmTRTmPr2w==,type:str]
-    database-port: ENC[AES256_GCM,data:gwYTZA==,iv:05APje1MmV+koLNFfLbGi6ZaFykimKKtfWzbSjOJUMA=,tag:gveDqpG7WCPUKQSK6L8Nfw==,type:str]
-sops:
-    lastmodified: "2025-08-30T14:42:27Z"
-    mac: ENC[AES256_GCM,data:4oV068gslNC2m8KfZw05RvisQOir1MgMLk5yceSPUTahLpAKUyErsSKbnjq1GZkeokQvyP0ByMb8H52SjW15bHZatoFtbDv7V9YAB2NLiYA6t1RHpy45xlDwMyo9psWg3Q7Kw0XK0/2sA+98HXK69gv3WJtGbS1u0l429zNtes4=,iv:VtkAxLlXXk/odKgCUBxWIdzk5DZZG89RfQjxAb2UKr0=,tag:mWwksLlFU+Q5V4Rw6+KMMg==,type:str]
-    pgp:
-        - created_at: "2025-08-30T14:42:27Z"
-          enc: |-
-            -----BEGIN PGP MESSAGE-----
+    environment: dev
+    debug: "true"
+    app-name: demo-app-dev
+    database-host: dev-db
+    database-port: "5432"
 
-            hQIMA94vrtQPGQYHAQ/+JJ+N1gBypUMCg2hP+NZ/ojm/Nlq6CfYdeodAyluY/ezQ
-            qwE3CQAY/ByPSQUiuEp/5Axn+bRhsm35LYkjYv6hb0yITeuUgJyu2nEdE70qh2ZD
-            Wxsj3kNFH4Dxf0NKj2bVUcU0debB0fSn9mpb9OY4afjmS4nz+Os3luZgrVFGyqaN
-            lQdIp7kAJ3cA+k3wO6y6alpdKh2pUh91FZzboPEMcSHAPboxZPOSepoRKF+DasjV
-            7izq6dzm6MrXVHtQBC/TPwivUNvyJARu+EoHBBKxJwYGI0lPIbqVDY2d4sXfvfsJ
-            RWaHYkmt/MiPawf43md37YArEWp0aveqCoGTSluFFK3yvA8cqOKQi6VPzfp3mWac
-            au/RDR5PNPaXdbcfm+JAWVOq6952P1qqbUDLy44ER0tkGJTU+IH5TRJ4U68oUvKQ
-            4VjpWjibMbWz/3+OLE+tMWRzex0NjUGun5nCYqQ2wc8J6h0fe70vRXqu7IhQ5lao
-            lb8irFTTUSh/I4PhcCdC5D67qhDJbmJkg2bAFatlozH+jSHho3QxeaayNpPcWGfB
-            Xv2SVQf9CnMgl2Ebiup/IwNt2UEP7+/VZr9aw6kTs9XiZl3QxPS2IkmfiuR2epzA
-            piASJ4lgVKYJM0NyZd7DVMQOlGY5ymo6ywDQiZjfEoV/A5tDLpBcZBj2feNlaqrS
-            XgFEUs7R4kpB4D7zPfh43CPWT2MHUocXsW/+I2OaAI/txip+oyV1iRvAouqjxTuG
-            7ARn4ejguM5xDw/cpa57l4XPR3XmJTEwM5yeL5S56nKOU7qWVjGmfGLXFVcRT9o=
-            =zGpp
-            -----END PGP MESSAGE-----
-          fp: 0258C3662CDA05AB59DE88EFEC4B3E036E6CE741
-    encrypted_regex: ^(data|stringData|apiKey|password|token|secret|credential)$
-    version: 3.10.2
