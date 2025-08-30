@@ -4,27 +4,20 @@ namespace: demo-app
 
 resources:
   - ../base
-  # XÓA - sops-secrets.yaml và - sops-config.yaml Ở ĐÂY
 
-# THÊM secretGenerator để xử lý file đã mã hóa
+# THAY ĐỔI behavior từ 'merge' thành 'create'
 secretGenerator:
   - name: app-secrets
-    behavior: merge
+    behavior: create  # ĐỔI TỪ merge SANG create
     files:
       - sops-secrets.yaml
+
+configMapGenerator:
   - name: app-config
-    behavior: merge
+    behavior: create  # ĐỔI TỪ merge SANG create
     files:
       - sops-config.yaml
 
 labels:
   - pairs:
       environment: dev
-
-images:
-  - name: nginx
-    newTag: alpine
-
-replicas:
-  - name: demo-app
-    count: 2
