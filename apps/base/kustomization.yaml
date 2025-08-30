@@ -8,6 +8,8 @@ resources:
   - service.yaml
   - configmap.yaml
 
-commonLabels:
-  app: demo-app
-  environment: base
+# THAY commonLabels BẰNG labels
+labels:
+  - pairs:
+      app: demo-app
+      environment: base
