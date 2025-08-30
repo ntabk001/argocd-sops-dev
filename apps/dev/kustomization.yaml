@@ -4,14 +4,15 @@ namespace: demo-app
 
 resources:
   - ../base
+  - sops-secrets.yaml  # THÊM VÀO resources thay vì secretGenerator
+  - sops-config.yaml
 
-patches:
-  - path: patch-deployment.yaml
-  - path: sops-secrets.yaml
-  - path: sops-config.yaml
+# XÓA secretGenerator section hoàn toàn
+# XÓA patches section nếu không cần
 
-commonLabels:
-  environment: dev
+labels:
+  - pairs:
+      environment: dev
 
 images:
   - name: nginx
