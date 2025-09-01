@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: app-base-config
-  namespace: demo-app
-data:
-  app-version: "1.0.0"
-  log-level: "info"
