@@ -1,2 +1,4 @@
 generators:
   - generator.yaml
+resources:
+  - busybox.yaml
