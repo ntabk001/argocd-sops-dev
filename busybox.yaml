@@ -11,5 +11,5 @@ spec:
       - name: FOO
         valueFrom:
           secretKeyRef:
-            name: my-secret
+            name: my-secret1
             key: FOO
