@@ -1,32 +1,15 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
   name: busybox-test
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: busybox
-  template:
-    metadata:
-      labels:
-        app: busybox
-    spec:
-      containers:
-      - name: busybox
-        image: busybox:1.36
-        command: ["sh", "-c", "echo 'FOO from secret-vars.env: $FOO' && echo 'Contents of secret-file.txt:' && cat /etc/secrets/secret-file.txt"]
-        env:
-        - name: FOO
-          valueFrom:
-            secretKeyRef:
-              name: my-secret
-              key: FOO
-        volumeMounts:
-        - name: secret-volume
-          mountPath: /etc/secrets
-          readOnly: true
-      volumes:
-      - name: secret-volume
-        secret:
-          secretName: my-secret
+  containers:
+  - name: busybox
+    image: busybox:1.36
+    command: ["sh", "-c", "echo 'FOO from secret-vars.env: $FOO' && sleep 3600"]
+    env:
+      - name: FOO
+        valueFrom:
+          secretKeyRef:
+            name: my-secret
+            key: FOO
