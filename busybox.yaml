@@ -6,10 +6,17 @@ spec:
   containers:
   - name: busybox
     image: busybox:1.36
-    command: ["sh", "-c", "echo 'Decrypted FOO from secret-vars.env:' && cat /etc/secrets/secret-vars.env && echo 'Decrypted Contents of secret-file.txt:' && cat /etc/secrets/secret-file.txt && sleep 3600"]
+    command: ["sh", "-c", "echo 'FOO from secret-vars.env: && cat /etc/secrets/secret-vars.env' && echo 'Contents of secret-file.txt:' && cat /etc/secrets/secret-file.txt"]
+    env:
+      - name: FOO
+        valueFrom:
+          secretKeyRef:
+            name: my-secret
+            key: FOO
     volumeMounts:
     - name: secret-volume
       mountPath: /etc/secrets
+      readOnly: true
   volumes:
   - name: secret-volume
     secret:
