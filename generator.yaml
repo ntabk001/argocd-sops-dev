@@ -2,6 +2,12 @@ apiVersion: goabout.com/v1beta1
 kind: SopsSecretGenerator
 metadata:
   name: my-secret
+generatorOptions:
+  disableNameSuffixHash: true
+  labels:
+    type: generated
+  annotations:
+    note: generated
 envs:
   - secret-vars.env
 files:
