@@ -2,3 +2,9 @@ generators:
   - generator.yaml
 resources:
   - busybox.yaml
+generatorOptions:
+  disableNameSuffixHash: true
+  labels:
+    type: generated
+  annotations:
+    note: generated
