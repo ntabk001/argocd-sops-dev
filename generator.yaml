@@ -1,13 +1,11 @@
 apiVersion: goabout.com/v1beta1
 kind: SopsSecretGenerator
 metadata:
-  name: my-secret1
-generatorOptions:
-  disableNameSuffixHash: true
-  labels:
-    type: generated
   annotations:
-    note: generated
+   config.kubernetes.io/function: |
+      exec:
+        path: ./SopsSecretGenerator
+  name: my-secret
 envs:
   - secret-vars.env
 files:
