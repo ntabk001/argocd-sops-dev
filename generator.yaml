@@ -1,10 +1,6 @@
 apiVersion: goabout.com/v1beta1
 kind: SopsSecretGenerator
 metadata:
-  annotations:
-   config.kubernetes.io/function: |
-      exec:
-        path: ./SopsSecretGenerator
   name: my-secret
 envs:
   - secret-vars.env
